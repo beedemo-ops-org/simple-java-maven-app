@@ -63,20 +63,6 @@
              <goals>
                <goal>check</goal>
              </goals>
-            <configuration>
-              <rules>
-                <rule>
-                  <element>CLASS</element>
-                  <limits>
-                    <limit>
-                      <counter>LINE</counter>
-                      <value>COVEREDRATIO</value>
-                      <minimum>80%</minimum>
-                    </limit>
-                  </limits>
-                </rule>
-              </rules>
-            </configuration>
            </execution>
          </executions>
        </plugin>
