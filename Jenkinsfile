@@ -17,7 +17,7 @@ pipeline {
       post {
         always {
           publishCoverage adapters: [jacoco(path: '**/*/jacoco.xml', thresholds: [[failUnhealthy: true, thresholdTarget: 'Line', unhealthyThreshold: 60.0]])], sourceFileResolver: sourceFiles('NEVER_STORE')
-          recordIssues enabledForFailure: true,  tools: [java(), javaDoc()], aggregatingResults: 'true', id: 'java', name: 'Java'
+          recordIssues enabledForFailure: true,  tools: [java(), javaDoc()], aggregatingResults: 'true', id: 'java', name: 'Java', skipPublishingChecks: true
           recordIssues enabledForFailure: true, tool: errorProne(), healthy: 1, unhealthy: 20
           recordIssues enabledForFailure: true, tools: [pmdParser(pattern: 'target/pmd.xml'),
             spotBugs(pattern: 'target/spotbugsXml.xml')],
